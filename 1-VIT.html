@@ -52,169 +52,110 @@ src="https://www.facebook.com/tr?id=890116009198511&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 
 <style>
-    body {
+  body {
     font-family: 'Karla', sans-serif;
-    background-color: #FFFFFF; /* Soft Gray */
-    color: #2C2C2C; /* Dark Gray */
+    background-color: #f6f9fc;
+    color: #2C2C2C;
 }
 
-h1 {
+h1, h2, h4 {
     font-family: 'Karla', sans-serif;
-    color: #FDCC5E; /* Coral */
+    color: #32325d;
 }
 
-h2 {
+p, label {
     font-family: 'Karla', sans-serif;
-    color: #000000; /* Cool Blue */
+    color: #8898aa;
 }
 
-h4 {
-    font-family: 'Karla', sans-serif;
-    color: #2C2C2C; /* Dark Gray */
+.form-control {
+    border-radius: 8px;
+    border-color: #cfd7df;
+    border-width: 2px;
+    transition: all 0.25s ease-in-out;
 }
 
-p {
-    font-family: 'Karla', sans-serif;
-    color: #2C2C2C; /* Dark Gray */
+.btn-primary {
+    background-color: #32325d;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    transition: all 0.25s ease-in-out;
 }
 
-label {
-    font-family: 'Karla', sans-serif;
-    color: #2C2C2C; /* Mint */
-}
-
-
-    .form-control {
-        border-radius: 16px; /* Made slightly rounded for aesthetics */
-        border-color: #DEDEDE;
-        border-width: 2px;
-        transition: all 0.3s ease-in-out; /* Added transition for smoother effects */
-    }
-
-    .btn-primary {
-        background-color: #000000; /* Black button */
-        border: 2px solid #000000; /* Added a black border to ensure size consistency */
-        border-radius: 16px;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .payment-method {
-    background-color: #F4F4F4;
+.payment-method {
+    background-color: #FFFFFF;
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 2px;
-    border-color: #111111;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    border: 1px solid #e3e8ee;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-    .form-control:hover, .form-control:focus {
-        border-color: #1B1B1B;
-        box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+.form-control:hover, .form-control:focus {
+    border-color: #32325d;
+    box-shadow: 0 1px 3px rgba(50, 50, 93, 0.1);
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #525f7f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+}
+
+@media(min-width: 992px) {
+    .checkout-container {
+        flex-direction: row;
     }
 
-    .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-        background-color: #FDCC5E; /* Accent Color */
-        border-color: #FDCC5E; 
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .checkout-formal, .order-summary {
+        flex: 1;
     }
+}
 
-    @media(max-width: 992px) {
-        .checkout-container {
-            flex-direction: column-reverse;
-        }
-    }
-
-    @media(min-width: 992px) {
-        .checkout-container {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-        }
-
-        .checkout-formal, .order-summary {
-            flex: 0 0 49%;
-        }
-    }
-
-    .checkout-formal {
+.checkout-formal, .order-summary {
     padding: 2rem;
-    margin-bottom: 2rem;
     background-color: #ffffff;
-    border-radius: 0px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.order-summary {
-    padding: 2rem;
-    margin-bottom: 2rem;
-    background-color: #FAFAFA; /* Light gray background for order summary */
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+.banner, .banner-image {
+    width: 100%;
 }
 
+.banner-image {
+    height: auto;
+    object-fit: cover;
+}
 
-    .order-summary {
-        max-width: 540px;
-    }
+@keyframes highlight {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
 
-    .banner {
-        width: 100%;
-    }
-
-    .banner-image {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
-
-    @keyframes highlight {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); } /* Slightly reduced scale for a subtler effect */
-        100% { transform: scale(1); }
-    }
-
-    #card-icons img {
-    transition: transform 0.3s ease-in-out;
+#card-icons img {
+    transition: transform 0.25s ease-in-out;
 }
 
 #card-icons img.highlight {
     animation: highlight 1s infinite;
 }
-    .form-group.dual-inputs {
+
+.form-group.dual-inputs {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    gap: 15px;
 }
 
 .form-group.dual-inputs > div {
     flex: 1;
-}
-    /* Style for the radio button when not checked */
-.form-check-input[type="radio"]::before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 2px solid #FD605A;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 2px;
-}
-
-/* Style for the radio button when checked */
-.form-check-input[type="radio"]:checked::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #FD605A;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 6px;
 }
 
 .form-check-input[type="radio"] {
@@ -228,48 +169,50 @@ label {
     margin-right: 10px;
     vertical-align: middle;
 }
-    .shipping-method-box {
-    background-color: #F4F4F4;
+
+.form-check-input[type="radio"]::before {
+    border-color: #525f7f;
+}
+
+.form-check-input[type="radio"]:checked::after {
+    background-color: #525f7f;
+}
+
+.shipping-method-box {
+    background-color: #ffffff;
     border-radius: 16px;
-    border: 2px solid #DEDEDE;
+    border: 2px solid #cfd7df;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.25s ease-in-out;
 }
 
 .shipping-method-box:hover {
-    border-color: #111111;
-}
-
-.form-check-input[type="radio"]::before {
-    border-color: #FDCC5E;
-}
-
-.form-check-input[type="radio"]:checked::after {
-    background-color: #FDCC5E;
+    border-color: #32325d;
 }
 
 .form-check-label {
     margin-bottom: 0;
 }
-    .footer {
-    background-color: #FAFAFA;
+
+.footer {
+    background-color: #f6f9fc;
     padding: 20px 0;
     text-align: center;
 }
 
 .footer a {
-    color: #2C2C2C; /* Dark Gray */
+    color: #8898aa;
     text-decoration: none;
     margin: 0 10px;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.25s ease-in-out;
 }
 
 .footer a:hover {
-    color: #FD605A; /* Coral */
-}
+    color: #32325d;
+}  
 
 
 
