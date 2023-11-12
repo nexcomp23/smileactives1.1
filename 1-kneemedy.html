@@ -139,10 +139,12 @@ snaptr('track', 'ADD_CART')
         width: 100%;
     }
 
-    .banner-image img {
-    width: 100%;
-    height: auto;
-  }
+    .banner-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    
 
     @keyframes highlight {
         0% { transform: scale(1); }
@@ -273,12 +275,10 @@ snaptr('track', 'ADD_CART')
 </head>
 
 <body>
- <!-- Your banner image area -->
-<picture class="banner-image">
-  <source media="(min-width: 768px)" srcset="src/bogo3-bottom-cta-section-desktop.jpg">
-  <source media="(max-width: 767px)" srcset="src/bogo3-bottom-cta-section-desktop.jpg">
-  <img src="CONTENT/Smile actives. (3).png" alt="Banner" style="width:100%; height:auto;">
-</picture>
+ <!-- Banner Image -->
+    <div class="banner">
+        <img src="src/bogo3-bottom-cta-section-desktop.jpg" alt="Banner" class="banner-image">
+    </div>
 	
     <!-- Checkout Container -->
     <div class="container checkout-container py-5">
